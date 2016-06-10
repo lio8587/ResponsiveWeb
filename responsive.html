@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Web design</title>
+    <!--Css-->
+    <!--坚屏 media style-->
+    <link rel="stylesheet" media="screen and (orientation:portrait)" href="portrait-screen.css"/>
+    <!--横屏 media style-->
+    <link rel="stylesheet" media="not screen and (orientation:portrait)" href="portrait-screen.css"/>
+    <!--视口宽度大于800像素 media style-->
+    <link rel="stylesheet" media="screen and (orientation:portrait) and (min-width:800px)" href="800wide-portrait-screen.css"/>
+    <!--媒体查询列表 任意一个查询为真，则加载文件。全部查询都不为真，则不加载-->
+    <link rel="stylesheet" media="screen and (orientation:portrait) and (min-width:800px), projection" href="800wide-portrait-screen.css"/>
+    <!--Javascript-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+/*
+    max-width 网页宽度：指展示的最大宽度，一般是浏览器窗口宽度
+    max-device-width 设备分辨率宽度：指所展示使用的设备支持宽度，如一般电脑分辨率1280px，手机设备支持展示宽度(安卓有种宽度如360/480)等
+*/
+@media screen and (max-device-width: 400px){
+    a{
+        color: green;
+    }
+}
+
+/*
+    媒体查询特性
+    width 视口宽度
+    height 视口高度
+    device-width 渲染表面的宽度（对我们来说，就是设备屏幕的宽度）
+    device-height 渲染表面的高度（对我们来说，就是设备屏幕的高度）
+    orientation 检查设备是横向还是纵向
+    aspect-ratio 基于视口宽度和高度的宽高比。一个 16：9 比例的显示屏可以这样定义 aspect-ratio:16/9
+    device-aspect-ratio 和 aspect-ratio 类似，基于设备渲染平面宽度和高度的宽高比
+    color 每种颜色的位数。例如 min-color:16 会检测设备是否拥有16位颜色
+    color-index 设备的颜色索引表中的颜色数。值必须是非负整数
+    monochrome 检测单色帧缓冲区中每像素所使用的位数。值必须是非负整数，如 monochrome:2
+    resolution 用来检测屏幕或打印机的分辨率，如 min-resolution:300dpi. 还可以接受每厘米像素点数的度量值。如 min-resolution:118dpcm
+    scan 电视机的扫描方式，值可设为 progressive(逐行扫描) 或 interlace(隔行扫描)。如720p HD电视(720p 的 p 即表明是逐行扫描)匹配 scan:progressive,而1080i HD 电视(1080i 中的i 表明是隔行扫描)匹配 scan:interlace
+    grid 用来检测输出设备是网格设备还是位图设备
+
+    注: 除了 scan grid 外，都可使用 min / max 前缀来创建一个查询范围
+*/
+</style>
+
+<!--header-->
+<header>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#" title="Home">Home</a></li>
+            <li><a href="#" title="About">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+</body>
+</html>
