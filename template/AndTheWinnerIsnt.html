@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 缩放比例设置为1.0 浏览器按视口实际大小渲染页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>And The Winner Isn't</title>
+    <!--Css-->
+    <link rel="stylesheet" href="../css/normalize.css"/>
+    <!--Javascript-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+
+    body {
+        font-size: 100%;
+    }
+    a {
+        text-decoration: none;
+    }
+    img, object, video, embed {
+        max-width: 100%;
+    }
+
+    .wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        width: 96%; /* 控制最外层的 div */
+        max-width: 1414px; /* 这个宽度下大多数浏览器恰好能剪切出完整的角旗，而不会留个半边 */
+    }
+    .header {
+        margin: 0 1.041667%; /* 10 / 960 */
+        width: 97.916667%; /* 940 / 960 */
+        background: url("../images/buntingFW.png") repeat-x;
+    }
+    /* logo */
+    .logo {
+        display: block;
+        padding-top: 7.8125%; /* 75 / 960 */
+        color: #0d0c0c;
+        text-transform: uppercase;
+        font-family: Arial, 'Lucida Grande', Verdana, sans-serif;
+        font-size: 3em; /* 48 / 16 = 3 */
+    }
+    .logo span {
+        color: #dfdada;
+    }
+    .navigation {
+        margin-top: 2.708333%; /* 25 / 960 */
+        padding: 0 1.041667% 2.708333% 1.041667%;
+        width: 97.916667%; /* 940 / 960 */
+        border-bottom: double 4px #bfbfbf;
+    }
+    .navigation li{
+        display: inline-block;
+        margin-right: 2.708333%; /* 25 / 960 */
+    }
+    .navigation li a {
+        height: 2.625em; /* 42 / 16 = 2.625 */
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: Arial, 'Lucida Grande', Verdana, sans-serif;
+        font-size: 1.6875em; /* 27 / 16 = 1.6875 */
+        color: black;
+    }
+    .content {
+        margin-top: 6.041667%; /* 58 / 960 */
+        margin-right: 1.041667%; /* 10 / 960 */
+        float: right;
+        width: 72.916667%; /* 700 / 960 */
+        background-color: #dedede;
+    }
+    .sidebar {
+        border-right: 2px solid #e8e8e8;
+        margin: 6.041667% 1.041667% 0 1.041667%;
+        float: left;
+        width: 22.916667%; /* 220 / 960 */
+        background-color: #fe9c00;
+    }
+    .sideBlock img {
+        width: 45%;
+    }
+    .footer {
+        float: left;
+        margin: 2.083333% 1.041667% 0 1.041667%; /* 20 / 960 */
+        clear: both;
+        width: 97.916667%; /* 940 / 960 */
+        background-color: #663300;
+    }
+
+    /* oscarMain 奥斯卡雕像图片 */
+    .oscarMain {
+        float: left;
+        margin-top: -28px;
+        width: 28.9398281%; /* 202 / 698 */
+        max-width: 202px;
+    }
+
+/*
+    iPad 媒体查询  - 坚直iPad视口宽度 768 像素  - 横向视口宽度 1024 像素
+*/
+    @media screen and (max-width: 768px) {
+        .wrapper, .header, .footer, .navigation {
+            width: 768px;
+            margin: 0;
+        }
+        .logo {
+            text-align: center;
+        }
+        .navigation {
+            text-align: center;
+            background-image: none;
+            border-top: 4px double #bfbfbf;
+            padding-top: 20px;
+        }
+        .navigation ul li a {
+            background-color: #dedede;
+            line-height: 60px;
+            font-size: 40px;
+        }
+        .content, .sidebar {
+            margin-top: 20px;
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 728px;
+        }
+
+        .header, .sidebar, .content, .footer {
+            width: 748px;
+        }
+    }
+
+
+</style>
+
+<div class="wrapper">
+    <!-- the header and navigation -->
+    <div class="header" role="banner">
+        <a href="/">
+            <div class="logo">
+                And the winner is
+                <span>n't...</span>
+            </div>
+        </a>
+        <nav role="navigation">
+            <ul class="navigation">
+                <li><a href="#">Why?</a></li>
+                <li><a href="#">Synopsis</a></li>
+                <li><a href="#">Stills/Photos</a></li>
+                <li><a href="#">Videos/clips</a></li>
+                <li><a href="#">Quotes</a></li>
+                <li><a href="#">Quiz</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- the content -->
+    <div class="content" role="main">
+        <img class="oscarMain" src="../images/oscar.png" alt="oscar"/>
+        <p>Here is the content</p>
+    </div>
+    <!-- the sidebar -->
+    <aside>
+        <div class="sidebar">
+            <section role="complementary">
+                <div class="sideBlock unSung">
+                    <h4>Unsung heroes</h4>
+                    <a href="#"><img src="../images/kingKong.jpg" alt="King Kong"/></a>
+                    <a href="#"><img src="../images/midnightRun.jpg" alt="mid night Run"/></a>
+                </div>
+            </section>
+            <section role="complementary">
+                <div class="sideBlock overHyped">
+                    <h4>Overhyped nonsense...</h4>
+                    <a href="#"><img src="../images/moulinRouge.jpg" alt="MouLin Rouge"/></a>
+                    <a href="#"><img src="../images/wyattEarp.jpg" alt="wyatt Earp"/></a>
+                </div>
+            </section>
+        </div>
+    </aside>
+    <!-- the footer -->
+    <footer role="contentinfo">
+        <div class="footer">
+            <p>Here is the footer</p>
+        </div>
+    </footer>
+</div>
+
+
+</body>
+</html>
