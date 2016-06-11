@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+
+  # Adaptive-Images -----------------------------------------------------------------------------------
+
+  # Add any directories you wish to omit from the Adaptive-Images process on a new line, as follows:
+  # RewriteCond %{REQUEST_URI} !ignore-this-directory
+  # RewriteCond %{REQUEST_URI} !and-ignore-this-directory-too
+
+  RewriteCond %{REQUEST_URI} !assets
+
+  # don't apply the AI behaviour to images inside AI's cache folder:
+  RewriteCond %{REQUEST_URI} !ai-cache
+
+  # Send any GIF, JPG, or PNG request that IS NOT stored inside one of the above directories
+  # to adaptive-images.php so we can select appropriately sized versions
+
+  RewriteRule \.(?:jpe?g|gif|png)$ adaptive-images.php
+
+  # END Adaptive-Images -------------------------------------------------------------------------------
+
+  # 上面代码设定了存在 assets 文件夹中的图片不会被缩放；反之，想显式声明只允许某个文件夹图片被缩放，将规则中的感叹号去掉即可 ---
+</IfModule>
