@@ -1,0 +1,19 @@
+CACHE MANIFEST
+#v1
+
+#部分罗列了所有离线使用所需的文件---------------------------------------------------------
+CACHE:
+template/andthewinnerisnt.html
+template/responsive.html
+css/main.scss
+images/buntingFw.png
+images/oscar.png
+images/wyattEarp.jpg
+
+#部分罗列了所有不需要被缓存的文件 星号被称为在线白名单通配符---------------------------------
+NETWORK:
+*
+
+FALLBACK:
+offline.html
+

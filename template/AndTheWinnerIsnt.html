@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html lang="zh-cmn-Hans" manifest="../offline.manifest">
 <head>
     <meta charset="UTF-8">
     <!-- 缩放比例设置为1.0 浏览器按视口实际大小渲染页面 -->
@@ -29,6 +29,10 @@
     }
     img, object, video, embed {
         max-width: 100%;
+    }
+    video {
+        max-width: 100%;
+        height: auto;
     }
     /* wrapper */
     .wrapper {
@@ -182,13 +186,13 @@
         <p>that films like <b>King Kong</b> , <b>MouLin Rouge</b> and <b>Munich</b> get the statue whilst the real cinematic heroes lose out. Not very Hollywood is it?</p>
         <p><i>We're here to put things right.</i></p>
         <a href="#">these should have won &raquo;</a>
-        <video controls autoplay preload="auto" loop poster="../video/CityOfTheSky.jpg" width="400" height="200">
+        <video controls autoplay preload="auto" loop poster="../video/CityOfTheSky.jpg">
             <source src="../video/CityOfTheSky.mp4" type="video/mp4" />
             <source src="../video/CityOfTheSky.ogg" type="video/ogg" />
-            <object data="../video/CityOfTheSky.swf" type="application/x-shockwave-flash" width="400" height="200">
+            <object data="../video/CityOfTheSky.swf" type="application/x-shockwave-flash">
                 <param name="movie" value="../video/CityOfTheSky.mp4" />
                 <param name="flashvars" value="controlbar=over&amp;image=CityOfTheSky.jpg&amp; file=../video/CityOfTheSky.mp4" />
-                <img width="400" height="200" src="../video/CityOfTheSky.jpg" alt="_title_" title="No video playback capabilities, please download the video below"/>
+                <img src="../video/CityOfTheSky.jpg" alt="_title_" title="No video playback capabilities, please download the video below"/>
             </object>
             <p><b>Download Video:</b></p>
             MP4 Format: <a href="CityOfTheSky.mp4">"mp4"</a>
