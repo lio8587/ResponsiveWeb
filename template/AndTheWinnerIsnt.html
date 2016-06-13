@@ -78,6 +78,31 @@
         font-size: 1.6875em; /* 27 / 16 = 1.6875 */
         color: black;
     }
+    /* odd 单数 */
+    .navigation li:nth-child(odd) a{
+        color: darkolivegreen;
+    }
+    /* even 双数 */
+    .navigation li:nth-child(even) a{
+        color: green;
+    }
+    /*
+        理解 nth 规则
+        使用整数 :nth-child(2) 会选中列表中第二个列表项目
+        使用数值表达式 :nth-child(2n+1) 会从第一个元素开始，然后每两个元素选一个（可使用负数）
+     */
+    .navigation li:nth-child(3n-2) a{
+        color: cadetblue;
+    }
+    /* 从第三个元素开始，选择每一个类名为 internal 的列表项目 */
+    .navigation li.internal:nth-of-type(n+1) a{
+        color: red;
+    }
+    /* 用于选择不满足某些条件的元素 */
+    .navigation li:not(.internal) a{
+        color: gold;
+    }
+
     /* content */
     .content {
         margin-top: 6.041667%; /* 58 / 960 */
@@ -161,12 +186,12 @@
         </a>
         <nav role="navigation">
             <ul class="navigation">
-                <li><a href="#">Why?</a></li>
-                <li><a href="#">Synopsis</a></li>
+                <li class="internal"><a href="#">Why?</a></li>
+                <li class="internal"><a href="#">Synopsis</a></li>
                 <li><a href="#">Stills/Photos</a></li>
-                <li><a href="#">Videos/clips</a></li>
-                <li><a href="#">Quotes</a></li>
-                <li><a href="#">Quiz</a></li>
+                <li class="internal"><a href="#">Videos/clips</a></li>
+                <li class="internal"><a href="#">Quotes</a></li>
+                <li class="internal"><a href="#">Quiz</a></li>
             </ul>
         </nav>
     </div>

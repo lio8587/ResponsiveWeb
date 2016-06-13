@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" manifest="../offline.manifest">
+<head>
+    <meta charset="UTF-8">
+    <!-- 缩放比例设置为1.0 浏览器按视口实际大小渲染页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CSS3 多栏布局</title>
+    <!--Css-->
+    <link rel="stylesheet" href="../css/normalize.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body>
+
+<style>
+    .main {
+        /*column-width: 12em;*/  /* 具体栏位宽度 */
+        -webkit-column-count: 4;  /* 具体栏位数量 */
+        -moz-column-count: 4;
+        column-count: 4;
+        -webkit-column-gap: 2em;  /* 增加栏位间隙 */
+        -moz-column-gap: 2em;
+        column-gap: 2em;
+        column-rule: thin dotted #999;  /* 增加栏位分割线 */
+
+        -ms-word-wrap: break-word;  /* 允许长单词换行 */
+        word-wrap: break-word;
+    }
+    /*
+        伪元素的使用
+        first-line 选中 <p> 标签的第一行
+        first-letter 选中 <p> 标签的第一个字母
+     */
+    p::first-line {
+        color: red;
+    }
+    p::first-letter {
+        font-size: 4em;
+    }
+    /* CSS3 属性选择器 */
+    /* Element[attribute^='value']  开头 */
+    div[class^='main']{
+        background-color: yellow;  /* 设置 class 属性值以 "main" 开头的所有 div 元素的背景颜色 */
+    }
+    /* Element[attribute*='value']  包含 */
+    img[alt*='king Kong']{
+        border: 1em red solid;  /* 设置 alt 属性值包含 "King Kong" 的所有 img 元素加 border 样式 */
+    }
+    /* Element[attribute$='value']  结尾 */
+    img[alt$='oscar']{
+        border-color: green;  /* 设置 alt 属性值以 "oscar" 结尾的所有 img 元素的边框颜色 */
+    }
+    /*
+        HSL 颜色
+        HSL 模式基于一个 360° 的色相环
+        H 代表色相  60° 黄色、 120° 绿色、 180° 青色、 240° 蓝色、 300° 洋红色、 360° 红色
+        S 代表饱和度
+        L 代表亮度
+    */
+    img[alt$='oscar']{
+        border-color: hsla(300, 50%, 50%, .4);  /* 设置 alt 属性值以 "oscar" 结尾的所有 img 元素的边框颜色 */
+    }
+
+</style>
+<div class="main" role="main">
+    <p>
+        此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。虽然近两日价格有所回落，但国内油价挂钩的国际市场三种原油连续22个工作日移动平均价格上涨幅度已超过4%，达到国内成品油价格调整的边界条件。
+        <!--任意文字-->
+    </p>
+    <p>
+        通知要求，中石油、中石化、中海油三大公司要组织好成品油生产和调运，保持合理库存，加强综合协调和应急调度，保障成品油供应。各级价格主管部门要加大市场监督检查力度，依法查处不执行国家价格政策，以及囤积居奇、造谣惑众、合谋涨价、搭车涨价等违法行为，维护正常市场秩序。
+        <!--任意文字-->
+    </p>
+    <img src="../images/kingKong.jpg" alt="king Kong"/>
+    <img src="../images/kingKong.jpg" alt="test king Kong oscar"/>
+    <img src="../images/kingKong.jpg" alt=""/>
+    <a href="#" style="color: red;">人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和</a>
+    <a href="#" style="color: yellow;">每升零售价格分别提高0.22元和</a>
+    <a href="#" style="color: green;">决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和</a>
+    <a href="#" style="color: darkseagreen;">决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和</a>
+    <a href="#" style="color: darkgreen;">决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和</a>
+</div>
+
+
+</body>
+</html>
