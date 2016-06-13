@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
     <!-- 缩放比例设置为1.0 浏览器按视口实际大小渲染页面 -->
@@ -10,8 +10,12 @@
     <!--Javascript-->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- 自适应图片 -->
-    <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
-
+    <script src="../js/picturefill.min.js"></script>
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
+    <script src="../js/picturefill.js" async></script>
 </head>
 <body>
 
@@ -104,7 +108,7 @@
         width: 97.916667%; /* 940 / 960 */
         background-color: white;
     }
-    
+
 /*
     iPad 媒体查询  - 坚直iPad视口宽度 768 像素  - 横向视口宽度 1024 像素
 */
@@ -165,24 +169,53 @@
     <!-- the content -->
     <div class="content" role="main">
         <img class="oscarMain" src="../images/oscar.png" alt="oscar"/>
-        <h1>Every year <span>when I watch the Oscars I'm annoyed...</span></h1>
-        <p>that films like King Kong, MouLin Rouge and Munich get the statue whilst the real cinematic heroes lose out. Not very Hollywood is it?</p>
-        <p>We're here to put things right.</p>
+        <article>
+            <header>An article about HTML5</header>
+            <nav>
+                <a href="1.html">related link 1</a>
+                <a href="2.html">related link 2</a>
+            </nav>
+            <p>here is the content of the article.</p>
+            <footer>This was an article by Lydia.</footer>
+        </article>
+        <h1>Every year <em>when I watch the Oscars I'm annoyed...</em></h1>
+        <p>that films like <b>King Kong</b> , <b>MouLin Rouge</b> and <b>Munich</b> get the statue whilst the real cinematic heroes lose out. Not very Hollywood is it?</p>
+        <p><i>We're here to put things right.</i></p>
         <a href="#">these should have won &raquo;</a>
+        <video controls autoplay preload="auto" loop poster="../video/CityOfTheSky.jpg" width="400" height="200">
+            <source src="../video/CityOfTheSky.mp4" type="video/mp4" />
+            <source src="../video/CityOfTheSky.ogg" type="video/ogg" />
+            <object data="../video/CityOfTheSky.swf" type="application/x-shockwave-flash" width="400" height="200">
+                <param name="movie" value="../video/CityOfTheSky.mp4" />
+                <param name="flashvars" value="controlbar=over&amp;image=CityOfTheSky.jpg&amp; file=../video/CityOfTheSky.mp4" />
+                <img width="400" height="200" src="../video/CityOfTheSky.jpg" alt="_title_" title="No video playback capabilities, please download the video below"/>
+            </object>
+            <p><b>Download Video:</b></p>
+            MP4 Format: <a href="CityOfTheSky.mp4">"mp4"</a>
+            Ogg Format: <a href="CityOfTheSky.ogg">"Ogg"</a>
+        </video>
     </div>
     <!-- the sidebar -->
     <aside>
         <div class="sidebar">
             <section role="complementary">
                 <div class="sideBlock unSung">
-                    <h4>Unsung heroes...</h4>
-                    <a href="#"><img src="../images/kingKong.jpg" alt="King Kong"/></a>
-                    <a href="#"><img src="../images/midnightRun.jpg" alt="mid night Run"/></a>
+                    <h1>Unsung heroes...</h1>
+                    <a href="#">
+                        <img sizes="(min-width: 40em) 80vw, 100vw"
+                             srcset="../images/1366/kingKong.jpg 1366w, ../images/640/kingKong.jpg 640w, ../images/640/kingKong@2x.jpg 1366w"
+                             alt="King Kong" />
+                    </a>
+                    <a href="#">
+                        <img sizes="(min-width: 40em) 80vw, 100vw"
+                             srcset="../images/1366/midnightRun.jpg 1366w, ../images/640/midnightRun.jpg 640w, ../images/640/midnightRun@2x.jpg 1366w"
+                             alt="midnight Run" />
+                    </a>
                 </div>
             </section>
             <section role="complementary">
                 <div class="sideBlock overHyped">
-                    <h4>Overhyped nonsense...</h4>
+                    <h1>Overhyped nonsense...</h1>
                     <a href="#"><img src="../images/moulinRouge.jpg" alt="MouLin Rouge"/></a>
                     <a href="#"><img src="../images/wyattEarp.jpg" alt="wyatt Earp"/></a>
                 </div>
